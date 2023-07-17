@@ -33,8 +33,7 @@ class Snake:
         self.score = 0
 
     def draw(self):
-        pygame.draw.rect(screen, (238, 130, 238, 255),
-                         (self.head.x * self.size, self.head.y * self.size, self.size, self.size))
+        pygame.draw.rect(screen, (238, 130, 238, 255), (self.head.x * self.size, self.head.y * self.size, self.size, self.size))
         self.history.append(Position(self.head.x, self.head.y))
         # print(self.history)
         pygame.display.update()
