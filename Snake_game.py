@@ -69,9 +69,7 @@ class Snake:
         pygame.draw.rect(screen, (0, 0, 255, 255), (0, self.size * screen_size, self.size * screen_size, self.size * 2))
         self.printing("Score: " + str(self.score), self.size * 4, self.size * screen_size + 15, self.size + 1, 1)
         if self.first_fruit == 5:
-            pygame.draw.circle(screen, (255, 255, 255), [(self.fruit.x * self.size + self.size // 2),
-                                                         (self.fruit.y * self.size + self.size // 2)], self.size // 2,
-                               0)
+            pygame.draw.circle(screen, (255, 255, 255), [(self.fruit.x * self.size + self.size // 2), (self.fruit.y * self.size + self.size // 2)], self.size // 2, 0)
             self.first_fruit = 0
         elif self.fruit == self.head:
             self.random_fruit()
@@ -96,8 +94,7 @@ class Snake:
     def hitted(self):
         for i in range(len(self.history)):
             if self.head.x == self.history[i].x and self.head.y == self.history[i].y:
-                self.printing("YOU FAILED", screen_size * self.size // 2, screen_size * snake_object.size // 2, 30,
-                              2000)
+                self.printing("YOU FAILED", screen_size * self.size // 2, screen_size * snake_object.size // 2, 30, 2000)
                 self.is_alive = 1
 
     # for printing the messages
@@ -121,10 +118,8 @@ while snake_object.is_alive == 0:
     snake_object.eat()
     snake_object.next()
     if snake_object.score == 10:
-        snake_object.printing("YOU WIN", screen_size * snake_object.size // 2, screen_size * snake_object.size // 2, 30,
-                              2000)
+        snake_object.printing("YOU WIN", screen_size * snake_object.size // 2, screen_size * snake_object.size // 2, 30, 2000)
         snake_object.is_alive = 1
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
